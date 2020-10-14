@@ -5,9 +5,8 @@
     <string name="btnNewReleve">Nouveau relevé</string>
     <string name="temperature_lac">Température :</string>
     <string name="date_releve">Date :</string>
-    <string name="coord_gps_lac">Coordonnées GPS :</string>
     <string name="heure_releve">Heure :</string>
-    <string name="id_lac">id Lac :</string>
+    <string name="id_lac">Coordonnées :</string>
     <string name="table_layout_4_save">1</string>
     <string name="table_layout_4_open_shortcut">2</string>
     <string name="table_layout_4_open">3</string>

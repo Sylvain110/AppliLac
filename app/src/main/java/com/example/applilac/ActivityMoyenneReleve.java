@@ -2,17 +2,13 @@ package com.example.applilac;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 
-
-
-public class ActivityAfficherLacs extends Activity {
+public class ActivityMoyenneReleve extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listelacs);
+        setContentView(R.layout.activity_moyennereleve);
 
     }
 }
