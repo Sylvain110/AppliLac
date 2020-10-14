@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_accueil"
+        android:title="@string/menu_accueil">
+        <menu>
+            <item
+                android:id="@+id/menu_AfficherLac"
+                android:title="@string/menu_AfficherLac"></item>
+            <item
+                android:id="@+id/menu_AfficherReleve"
+                android:title="@string/menu_AfficherReleve"></item>
+            <item
+                android:id="@+id/menu_NewReleve"
+                android:title="@string/menu_NewReleve"></item>
+        </menu>
+    </item>
+</menu>

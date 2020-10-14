@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ActivityAfficherLacs"></activity>
+        <activity android:name=".ActivityAfficherReleve"></activity>
+        <activity android:name=".ActivityNewReleve"></activity>
     </application>
 
 </manifest>
