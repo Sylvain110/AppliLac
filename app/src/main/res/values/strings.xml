@@ -3,4 +3,17 @@
     <string name="btnAfficherLacs">Liste des lacs</string>
     <string name="btnAfficherReleves">Liste des relevés</string>
     <string name="btnNewReleve">Nouveau relevé</string>
+    <string name="temperature_lac">Température :</string>
+    <string name="date_releve">Date :</string>
+    <string name="coord_gps_lac">Coordonnées GPS :</string>
+    <string name="heure_releve">Heure :</string>
+    <string name="id_lac">id Lac :</string>
+    <string name="table_layout_4_save">1</string>
+    <string name="table_layout_4_open_shortcut">2</string>
+    <string name="table_layout_4_open">3</string>
+    <string name="table_layout_4_save_shortcut">4</string>
+    <string name="menu_AfficherLac">Afficher Lacs</string>
+    <string name="menu_accueil">Accueil</string>
+    <string name="menu_AfficherReleve">Afficher relevés</string>
+    <string name="menu_NewReleve">Nouveau relevé</string>
 </resources>
