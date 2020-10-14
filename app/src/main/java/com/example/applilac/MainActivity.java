@@ -14,16 +14,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_newreleve);
+        setContentView(R.layout.activity_main);
 
         //on associe à un objet java de type Button, un widget repéré physiquementpar son id
-        Button btnAfficherLac = findViewById(R.id.btnAfficherLacs);
+        Button btnAfficherLac = findViewById(R.id.btnAfficherMoyenneReleves);
         //on place un écouteur dessus
         View.OnClickListener ecouteur1 = new View.OnClickListener() {
             //on implémente la méthode onclick
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ActivityAfficherLacs.class);
+                Intent intent = new Intent(MainActivity.this, ActivityMoyenneReleve.class);
                 startActivity(intent);
 
             }
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_AfficherLac:
-                Toast.makeText(getApplicationContext(), "ouverture fenêtre Afficher lacs !", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this, ActivityAfficherLacs.class);
+                Toast.makeText(getApplicationContext(), "ouverture fenêtre Moyenne relevé !", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, ActivityMoyenneReleve.class);
                 startActivity(intent);
                 return true;
             case R.id.menu_AfficherReleve:

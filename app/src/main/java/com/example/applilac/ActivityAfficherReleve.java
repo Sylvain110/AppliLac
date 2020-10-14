@@ -8,7 +8,7 @@ public class ActivityAfficherReleve extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_afficherreleves);
+        setContentView(R.layout.activity_afficherreleve);
 
     }
 }
