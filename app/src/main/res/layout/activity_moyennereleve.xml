@@ -1,102 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="0,1,2"
-        android:gravity="center"
-        tools:ignore="MissingConstraints">
+        android:orientation="vertical"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:stretchColumns="0,2"
+            tools:ignore="MissingConstraints">
 
 
-        <TableRow
-            android:layout_width="301dp"
-            android:layout_height="87dp"
-            android:layout_margin="0dp"
-            android:background="#000000"
+            <TableRow
+                android:layout_width="301dp"
+                android:layout_height="87dp"
+                android:layout_margin="0dp"
+                android:background="#000000"
 
-            >
+                >
 
-            <TextView
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text="@string/Coordonnees"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:text="@string/MoyenneTemp"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textStyle="bold" />
+            </TableRow>
+
+            <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
+                android:layout_height="0dp"
                 android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text=" Nom lac "
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
+                android:layout_weight="1"
+                android:background="#000000">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text=" Mois "
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="0"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center|top"
+                    android:text="@string/ListeCoordonnees"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="2"
-                android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center"
-                android:text="Moy temp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textStyle="bold" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_margin="1dp"
-            android:layout_weight="1"
-            android:background="#000000">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_column="0"
-                android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center|top"
-                android:text="oui"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="1"
-                android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center|top"
-                android:text="oui"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_column="2"
-                android:layout_margin="1dp"
-                android:background="#FFFFFF"
-                android:gravity="center|top"
-                android:text="oui"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-        </TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_column="2"
+                    android:layout_margin="1dp"
+                    android:background="#FFFFFF"
+                    android:gravity="center|top"
+                    android:text="@string/ListeMoyenneTemp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            </TableRow>
 
 
-
-
-    </TableLayout>
+        </TableLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

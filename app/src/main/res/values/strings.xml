@@ -15,4 +15,17 @@
     <string name="menu_accueil">Accueil</string>
     <string name="menu_AfficherReleve">Afficher relevés</string>
     <string name="menu_NewReleve">Nouveau relevé</string>
+    <string name="Coordonnees">Coordonnées</string>
+    <string name="MoyenneTemp">Moyenne Temp</string>
+    <string name="ListeCoordonnees">Liste des coordonnées</string>
+    <string name="ListeMoyenneTemp">Liste des moyennes</string>
+    <string name="RadioButton6H">6h</string>
+    <string name="RadioButton12H">12h</string>
+    <string name="RadioButton18H">18h</string>
+    <string name="RadioButton24H">24h</string>
+    <string name="EditTextCoord">Coordonnées GPS</string>
+    <string name="EditTextTemp">Température en C</string>
+    <string name="ButtonEnregistrer">Enregistrer</string>
+    <string name="ButtonAnnuler">Annuler</string>
+    <string name="textviewTitre">Nouveau relevé</string>
 </resources>
