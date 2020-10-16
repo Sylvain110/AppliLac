@@ -33,9 +33,9 @@ public class ActivityNewReleve extends Activity {
                     case R.id.buttonEnregistrer:
                         //on passer les infos dans l'autre interface
                         Intent i = new Intent (ActivityNewReleve.this, ActivityAfficherReleve.class);
-                        i.putExtra("EXTRA_HP",coordonnees.getText().toString());
-                        i.putExtra("EXTRA_HC",temperature.getText().toString());
-                        i.putExtra("EXTRA_RAISE",heures[0]);
+                        i.putExtra("EXTRA_COOR",coordonnees.getText().toString());
+                        i.putExtra("EXTRA_TEMP",temperature.getText().toString());
+                        i.putExtra("EXTRA_HR",heures[0]);
                         startActivityForResult(i,0);
                         break;
                     case R.id.buttonAnnuler:

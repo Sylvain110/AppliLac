@@ -15,9 +15,9 @@
     <string name="menu_accueil">Accueil</string>
     <string name="menu_AfficherReleve">Afficher relevés</string>
     <string name="menu_NewReleve">Nouveau relevé</string>
-    <string name="Coordonnees">Coordonnées</string>
+    <string name="Coordonnees">Coord</string>
     <string name="MoyenneTemp">Moyenne Temp</string>
-    <string name="ListeCoordonnees">Liste des coordonnées</string>
+    <string name="ListeCoordonnees">Liste coord</string>
     <string name="ListeMoyenneTemp">Liste des moyennes</string>
     <string name="RadioButton6H">6h</string>
     <string name="RadioButton12H">12h</string>
@@ -28,4 +28,15 @@
     <string name="ButtonEnregistrer">Enregistrer</string>
     <string name="ButtonAnnuler">Annuler</string>
     <string name="textviewTitre">Nouveau relevé</string>
+    <string name="Temp6h">6h</string>
+    <string name="Temp24h">24h</string>
+    <string name="Temp18h">18h</string>
+    <string name="Temp12h">12h</string>
+    <string name="ListeReleve6h">Relevé à 6h</string>
+    <string name="ListeReleve12h">Relevé à 12h</string>
+    <string name="ListeRelev18h">Relevé à 18h</string>
+    <string name="ListeRelev24h">Relevé à 24h</string>
+    <string name="RadioButtonFarh">Farhenheit</string>
+    <string name="RadioButtonCel">Celsius</string>
+    <string name="btnValider">Valider</string>
 </resources>
