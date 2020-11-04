@@ -38,7 +38,7 @@ public class ActivityNewReleve extends Activity {
                         Intent i = new Intent (ActivityNewReleve.this, ActivityAfficherReleve.class);
 
                         i.putExtra("EXTRA_TEMP",temperature.getText().toString());
-                        i.putExtra("EXTRA_HR",heures[0]);
+                        i.putExtra("EXTRA_HR²",heures[0]);
                         startActivityForResult(i,0);
                         break;
                     case R.id.buttonAnnuler:
