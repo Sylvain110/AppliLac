@@ -85,7 +85,7 @@ public class ActivityNewReleve extends Activity {
         spinnerNumCpt.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String monCompteur = String.valueOf(spinnerNumCpt.getSelectedItem());
-                Toast.makeText(ActivityNewReleve.this, "Vous avez choisie : " + "\nle compteur numéro : " + monCompteur, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ActivityNewReleve.this, "Vous avez choisie : " + "\nle relevé : " + monCompteur, Toast.LENGTH_SHORT).show();
             }
 
             @Override

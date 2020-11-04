@@ -1,4 +1,4 @@
-package com.example.applilac;
+package com.example.app_bddsqllite;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -13,15 +13,15 @@ public class BdAdapter {
         static final String TABLE_RELEVES = "table_Releves";
         static final String COL_ID = "_id";
         static final int NUM_COL_ID = 0;
-        static final String COL_NUMLAC = "NUMLAC";
+        static final String COL_NUMLAC = "numlac";
         static final int NUM_COL_NUMLAC = 1;
-        static final String COL_JOUR = "JOUR";
+        static final String COL_JOUR = "jour";
         static final int NUM_COL_JOUR = 2;
-        static final String COL_MOIS = "MOIS";
+        static final String COL_MOIS = "mois";
         static final int NUM_COL_MOIS = 3;
-        static final int COL_HEURE = "HEURE";
+        static final String COL_HEURE = "heure";
         static final int NUM_COL_HEURE = 4;
-		static final float COL_TEMP = "TEMP";
+		static final String COL_TEMP = "temp";
         static final int NUM_COL_TEMP = 5;
         private CreateBDReleve bdReleves;
         private Context context;
@@ -66,20 +66,20 @@ public class BdAdapter {
                 return null;
             //Sinon
             c.moveToFirst();   //on se place sur le premier élément
-            Releve unReleve = new Releve(null,null,null,null);  //On créé un Releve
+            Releve unReleve = new Releve(null,null,null,null, temp = null);  //On créé un Releve
             //on lui affecte toutes les infos grâce aux infos contenues dans le Cursor
             unReleve.setnumlac(c.getString(NUM_COL_NUMLAC));
             unReleve.setjour(c.getString(NUM_COL_JOUR));
             unReleve.setmois(c.getString(NUM_COL_MOIS));
             unReleve.setheure(c.getString(NUM_COL_HEURE));
-			unReleve.settemp(c.getString(NUM_COL_TEMP));
+			unReleve.settemp(c.getFloat(NUM_COL_TEMP));
             c.close();     //On ferme le cursor
             return unReleve;  //On retourne l'Releve
         }
 
         public Releve getReleveWithJour(String jour){
             //Récupère dans un Cursor les valeurs correspondant à un Releve grâce à sa JOURignation)
-            Cursor c = db.query(TABLE_RELEVES, new String[] {COL_ID,COL_NUMLAC, COL_JOUR, COL_MOIS, COL_HEURE}, COL_JOUR + " LIKE \"" + JOUR +"\"", null, null, null, null);
+            Cursor c = db.query(TABLE_RELEVES, new String[] {COL_ID,COL_NUMLAC, COL_JOUR, COL_MOIS, COL_HEURE}, COL_JOUR + " LIKE \"" + jour +"\"", null, null, null, null);
             return cursorToReleve(c);
         }
 
@@ -91,11 +91,11 @@ public class BdAdapter {
             values.put(COL_MOIS, unReleve.getmois());
             values.put(COL_HEURE, unReleve.getheure());
 			values.put(COL_TEMP, unReleve.gettemp());
-            return db.update(TABLE_RELEVES, values, COL_NUMLAC + " = \"" +NUMLAC+"\"", null);
+            return db.update(TABLE_RELEVES, values, COL_NUMLAC + " = \"" +numlac+"\"", null);
         }
         public int removeReleveWithNUMLAC(String numlac){
             //Suppression d'un Releve de la BDD grâce à sa référence
-            return db.delete(TABLE_RELEVES, COL_NUMLAC + " = \"" +NUMLAC+"\"", null);
+            return db.delete(TABLE_RELEVES, COL_NUMLAC + " = \"" +numlac+"\"", null);
         }
 
         public Cursor getData(){
