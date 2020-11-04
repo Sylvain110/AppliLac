@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class ActivityNewReleve extends Activity {
@@ -18,7 +21,7 @@ public class ActivityNewReleve extends Activity {
 
         //on déclare des objets java pour chaque widget et obligatoirement en constante
         // car passées à l'autre interface
-        final EditText coordonnees = findViewById(R.id.editTextCoord);
+        final Spinner coordonnees = findViewById(R.id.spinnerCoordGPS);
         final EditText temperature = findViewById(R.id.editTextTemp);
         final String[] heures = {""};
 
@@ -33,7 +36,7 @@ public class ActivityNewReleve extends Activity {
                     case R.id.buttonEnregistrer:
                         //on passer les infos dans l'autre interface
                         Intent i = new Intent (ActivityNewReleve.this, ActivityAfficherReleve.class);
-                        i.putExtra("EXTRA_COOR",coordonnees.getText().toString());
+
                         i.putExtra("EXTRA_TEMP",temperature.getText().toString());
                         i.putExtra("EXTRA_HR",heures[0]);
                         startActivityForResult(i,0);
@@ -46,6 +49,7 @@ public class ActivityNewReleve extends Activity {
         };
         btnEnregistrer.setOnClickListener(ecouteur);
         btnAnnuler.setOnClickListener(ecouteur);
+
 
         //programmation des boutons radios
         RadioGroup radioGroupHeures = findViewById(R.id.radioGroupHeures);
@@ -69,6 +73,23 @@ public class ActivityNewReleve extends Activity {
                         Toast.makeText(getApplicationContext(), " 24H", Toast.LENGTH_LONG).show();
                         break;
                 }
+
+            }
+        });
+        //gestion de la liste déroulante des numéros de compteur
+        final Spinner spinnerNumCpt = (Spinner) findViewById(R.id.spinnerCoordGPS);
+        String[] lescompteurs={"123","456","789","147","258", "369"};
+        ArrayAdapter<String> dataAdapterR = new ArrayAdapter <String>( this , android.R.layout.simple_spinner_item ,lescompteurs );
+        dataAdapterR.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerNumCpt.setAdapter(dataAdapterR);
+        spinnerNumCpt.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String monCompteur = String.valueOf(spinnerNumCpt.getSelectedItem());
+                Toast.makeText(ActivityNewReleve.this, "Vous avez choisie : " + "\nle compteur numéro : " + monCompteur, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
