@@ -1,6 +1,7 @@
 package com.example.applilac;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -83,5 +84,20 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return false;
+    }
+
+    public void remplirTableReleve() {
+        DAOReleve clientBdd = new DAOReleve(this);
+        Releve releve1 = new Releve("123", "03", "12", "12");
+        Releve releve2 = new Releve(456, 04,03, 08);
+        //on ouvre la base de données
+        clientBdd.open();
+        //on insère client1 puis client2
+        clientBdd.insererReleve(releve1);
+        clientBdd.insererReleve(releve2);
+        //le curseur pour afficher le nombre de clients dans la base
+        Cursor c = clientBdd.getData();
+        Toast.makeText(getApplicationContext(), " il y a " +
+                String.valueOf(c.getCount()) + " clients ", Toast.LENGTH_LONG).show();
     }
 }
