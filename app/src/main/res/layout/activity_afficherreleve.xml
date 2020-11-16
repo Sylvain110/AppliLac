@@ -1,185 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-  
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_width="wrap_content">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="244dp"
-        android:layout_marginStart="10dp"
+    <Button
+        android:id="@+id/btnValiderNewReleve"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
         android:layout_marginEnd="100dp"
-        android:orientation="vertical"
+        android:layout_marginBottom="76dp"
+        android:layout_weight="1"
+        android:text="@string/btnValiderNewReleve"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints">
-
-        <DatePicker
-            android:id="@+id/simpleDatePicker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:calendarViewShown="false"
-            android:datePickerMode="spinner" />
-
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="@id/linearLayout2" />
 
     <LinearLayout
-        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="1dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="vertical">
 
-        <TableLayout
-
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:stretchColumns="*"
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
             tools:ignore="MissingConstraints">
 
+            <ScrollView
+                android:id="@+id/scrollView1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
-            <TableRow
-                android:layout_width="301dp"
-                android:layout_height="87dp"
-                android:layout_margin="0dp"
-                android:background="#000000">
+                <TableLayout
+                    android:id="@+id/TableCoord"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0"></TableLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="0"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
-                    android:text="@string/Coordonnees"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold" />
+            </ScrollView>
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="1"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
-                    android:text="@string/Temp6h"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="203dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/linearLayout4"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="2"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
-                    android:text="@string/Temp12h"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold" />
+            <DatePicker
+                android:id="@+id/dpResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="3"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
-                    android:text="@string/Temp18h"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold" />
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="4"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
-                    android:text="@string/Temp24h"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:textStyle="bold" />
-            </TableRow>
+            <TextView
+                android:id="@+id/lblDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date choisie (M-D-YYYY): "
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_margin="1dp"
-                android:layout_weight="1"
-                android:background="#000000">
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="0"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center|top"
-                    android:text="@string/ListeCoordonnees"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="1"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center|top"
-                    android:text="@string/ListeReleve6h"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+            <Button
+                android:id="@+id/btnChangeDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selectionner Date"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="2"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center|top"
-                    android:text="@string/ListeReleve12h"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="3"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center|top"
-                    android:text="@string/ListeRelev18h"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_column="4"
-                    android:layout_margin="1dp"
-                    android:background="#FFFFFF"
-                    android:gravity="center|top"
-                    android:text="@string/ListeRelev24h"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-            </TableRow>
-
-
-        </TableLayout>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</>

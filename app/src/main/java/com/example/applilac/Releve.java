@@ -7,6 +7,7 @@ public class Releve {
     protected String heure;
     protected float temp;
 
+
     //constructeur paramétré
     public  Releve (String numlac, String jour, String mois, String heure, Float temp){
         super();
@@ -14,10 +15,8 @@ public class Releve {
         this.jour=jour;
         this.mois=mois;
         this.heure=heure;
-		this.temp=temp;
+        this.temp=temp;
     }
-
-
 
 
     //Les accesseurs et les mutateurs

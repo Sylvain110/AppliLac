@@ -19,9 +19,10 @@ public class ActivityNewReleve extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newreleve);
 
+
         //on déclare des objets java pour chaque widget et obligatoirement en constante
         // car passées à l'autre interface
-        final Spinner coordonnees = findViewById(R.id.spinnerCoordGPS);
+        final String[] coordonnees = new String[1];
         final EditText temperature = findViewById(R.id.editTextTemp);
         final String[] heures = {""};
 
@@ -37,8 +38,9 @@ public class ActivityNewReleve extends Activity {
                         //on passer les infos dans l'autre interface
                         Intent i = new Intent (ActivityNewReleve.this, ActivityAfficherReleve.class);
 
+                        i.putExtra("EXTRA_COORD",coordonnees[0]);
                         i.putExtra("EXTRA_TEMP",temperature.getText().toString());
-                        i.putExtra("EXTRA_HR²",heures[0]);
+                        i.putExtra("EXTRA_HR",heures[0]);
                         startActivityForResult(i,0);
                         break;
                     case R.id.buttonAnnuler:
@@ -50,6 +52,23 @@ public class ActivityNewReleve extends Activity {
         btnEnregistrer.setOnClickListener(ecouteur);
         btnAnnuler.setOnClickListener(ecouteur);
 
+        //gestion de la liste déroulante des coordonnées géographiques
+        final Spinner spinnerCoord = (Spinner) findViewById(R.id.spinnerCoordGPS);
+        String[] lescoordonnees={"123.456.798","456.789.123","789.123.456"};
+        ArrayAdapter<String> dataAdapterR = new ArrayAdapter <String>( this , android.R.layout.simple_spinner_item ,lescoordonnees );
+        dataAdapterR.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCoord.setAdapter(dataAdapterR);
+        spinnerCoord.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                coordonnees[0] = String.valueOf(spinnerCoord.getSelectedItem());
+                Toast.makeText(ActivityNewReleve.this, "Vous avez choisie : " + "\nles coordonées GPS suivant : " + coordonnees, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         //programmation des boutons radios
         RadioGroup radioGroupHeures = findViewById(R.id.radioGroupHeures);
@@ -76,22 +95,6 @@ public class ActivityNewReleve extends Activity {
 
             }
         });
-        //gestion de la liste déroulante des numéros de compteur
-        final Spinner spinnerNumCpt = (Spinner) findViewById(R.id.spinnerCoordGPS);
-        String[] lescompteurs={"123","456","789","147","258", "369"};
-        ArrayAdapter<String> dataAdapterR = new ArrayAdapter <String>( this , android.R.layout.simple_spinner_item ,lescompteurs );
-        dataAdapterR.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerNumCpt.setAdapter(dataAdapterR);
-        spinnerNumCpt.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String monCompteur = String.valueOf(spinnerNumCpt.getSelectedItem());
-                Toast.makeText(ActivityNewReleve.this, "Vous avez choisie : " + "\nle relevé : " + monCompteur, Toast.LENGTH_SHORT).show();
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
     }
 }

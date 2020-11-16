@@ -39,4 +39,5 @@
     <string name="RadioButtonFarh">Farhenheit</string>
     <string name="RadioButtonCel">Celsius</string>
     <string name="btnValider">Valider</string>
+    <string name="btnValiderNewReleve">Valider</string>
 </resources>
