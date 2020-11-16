@@ -1,12 +1,20 @@
 package com.example.applilac;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
+
+import java.util.Calendar;
 
 public class ActivityAfficherReleve extends Activity {
 
@@ -88,7 +96,7 @@ public class ActivityAfficherReleve extends Activity {
             public void onClick(View v) {
 
                 final String message = "le relevé a bien été enregistré";
-                Intent i1 = new Intent();
+                Intent i1 = new Intent(ActivityAfficherReleve.this, MainActivity.class);
                 i1.putExtra("MESSAGE",message);
                 setResult(1,i1);
                 //on ferme l'interface
@@ -97,7 +105,6 @@ public class ActivityAfficherReleve extends Activity {
         };
         //on affecte l'écouteur au bouton
         btnValider.setOnClickListener(ecouteur1);
-
     }
 
     //display current date
@@ -126,7 +133,7 @@ public class ActivityAfficherReleve extends Activity {
 
         btnChangeDate = (Button) findViewById(R.id.btnChangeDate);
 
-        btnChangeDate.setOnClickListener(new OnClickListener() {
+        btnChangeDate.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -134,9 +141,7 @@ public class ActivityAfficherReleve extends Activity {
                 showDialog(DATE__DIALOG__ID);
 
             }
-
         });
-
     }
 
     @Override
@@ -170,5 +175,4 @@ public class ActivityAfficherReleve extends Activity {
 
         }
     };
-
 }
